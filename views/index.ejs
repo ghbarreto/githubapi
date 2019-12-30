@@ -1,0 +1,49 @@
+<!-- <% for (let ans in dataA) { %>
+    <div><strong style="color:blue;"><%= dataA[ans].name %></strong></div> 
+<%  } %> -->
+
+
+<!-- <% for (let ans2 in dataB) { %>
+    <div><strong style="color:red;"><%= dataB[ans2] %></strong></div> 
+<%  } %> -->
+
+<%- include("partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="row">
+            <h1 class="col-xs-9">Github</h1>
+                <img class="col-xs-4 sm" src="<%= dataA[0].owner.avatar_url %>"> <br>
+                <h4 class="col-xs-4">Name: <%= dataB.name %></h4>
+                <p>Followers: <%= dataB.followers %> </p>
+                <p>Following: <%= dataB.following %></p>
+                <p>Public Repos: <%= dataB.followers %></p>
+            <p></p>
+            <p>Bio: <%= dataB.bio %> </p>
+        </div>
+    </header>
+</div>
+
+<div class="container">
+<% for(let i = 0; i < dataA.length; i++){ %>
+    <div class="col-md-4 col-sm-6" style="justify-content: center;" >
+            <div class="thumbnail">
+                <img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png">
+            </div>
+            <div class="card-body">
+            <h5 class="card-title"> <a href=""><%= dataA[i].name %></a> </h5>
+            <p class="card-text"><%= dataA[i].description %></p>
+            <p class="card-text"><strong>Language: </strong><%= dataA[i].language %></p>
+            <p class="card-text"><strong>Role: </strong><%= dataA[i].default_branch %></p>
+            <a href="<%= dataA[i].html_url %>" class="btn btn-primary">Visit Repo</a>
+            </div>
+    </div>
+<% } %> 
+ <%- include("partials/footer") %>
+
+
+    
+    
+             
+
+
